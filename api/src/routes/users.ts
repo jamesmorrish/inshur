@@ -20,7 +20,8 @@ users.get('/', (request: Request, response: Response) => {
     users: users.slice((page -1) * limit, page * limit),
     page: page,
     limit: limit,
-    total: users.length,
+    totalUsers: users.length,
+    totalPages: Math.ceil(users.length / limit),
   });
 });
 

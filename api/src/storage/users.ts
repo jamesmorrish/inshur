@@ -36,8 +36,8 @@ export default class UsersRepository {
       username: 'jamesmorrish',
       name: 'James Morrish',
       jobTitle: 'Prisioner #4056',
-      favouriteFood: 'Something spicy',
-      profilePicture: 'https://instagram.fbrs1-2.fna.fbcdn.net/v/t51.2885-19/s320x320/25015569_1980537832198139_423254222268530688_n.jpg?_nc_ht=instagram.fbrs1-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=kf2Bd6i5CQIAX-8XzZF&edm=ABfd0MgBAAAA&ccb=7-4&oh=00_AT-zh4wH8_2G3cOyLYnOISukyuOlT2_bju9jmHyTRNmTIQ&oe=61BB0649&_nc_sid=7bff83'
+      favouriteFood: 'Beef Rendang',
+      profilePicture: 'https://pbs.twimg.com/profile_images/1375946996/morrish_twitter_400x400.png'
     },
     {
       username: 'alanpartridge',
