@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getUser } from '../../services/users';
 
+import './profilePage.css';
+
 export default function ProfilePage() {
   
+  const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState([]);
   const [errorMessage, setErrorMessage] = useState();
-  
-
   const { username } = useParams();
 
   useEffect(() => {   
@@ -17,8 +18,15 @@ export default function ProfilePage() {
       } else {
         setErrorMessage(res.message || 'There was an unexpected error.');
       }
+      setIsLoading(false);
     });
-  }, [])
+  }, [username])
+
+  if (isLoading) {
+    return (
+      <p>Loading...</p>
+    );
+  }
 
   if (errorMessage) {
     return (
@@ -26,27 +34,30 @@ export default function ProfilePage() {
         <h1>Whoops!</h1>
         <p>{errorMessage}</p>
 
-        <Link to="/">Back</Link>
+        <Link className="button" to="/">Back</Link>
       </div>
     );
   }
 
+  // TODO: Create Profile component.
   return (
-    <div>
+    <div className="profilePage">
       <h1>{ user.name }</h1>
 
-      <img src={user.profilePicture} alt={`${user.username}`} />
-      <dl>
-        <dt>Job Title</dt>
-        <dd>{ user.jobTitle }</dd>
+      <div className="box">
+        <img className="profilePic" src={user.profilePicture} alt={`${user.username}`} height="100" />
+        <dl>
+          <dt>Job Title</dt>
+          <dd>{ user.jobTitle }</dd>
 
-        <dt>Favourite Food</dt>
-        <dd>{ user.favouriteFood }</dd>
-      </dl>
+          <dt>Favourite Food</dt>
+          <dd>{ user.favouriteFood }</dd>
+        </dl>
 
-      <p></p>
+        <p></p>
+      </div>
 
-      <Link to="/">Back</Link>
+      <Link className="button" to="/">Back</Link>
     </div>
   );
 }

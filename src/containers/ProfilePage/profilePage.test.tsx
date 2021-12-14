@@ -30,5 +30,6 @@ describe('Profile page', () => {
     expect(screen.getByText('Job Title 1')).toBeInTheDocument();
     expect(screen.getByText('Chips')).toBeInTheDocument();
     expect(screen.getByAltText('user1')).toBeInTheDocument();
+
   });
 });

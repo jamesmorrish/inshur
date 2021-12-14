@@ -3,7 +3,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import Home from './containers/Home';
+import HomePage from './containers/HomePage';
 import ProfilePage from './containers/ProfilePage';
 import './App.css';
 
@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/:username" element={<ProfilePage />} />
         </Routes>
       </div>
