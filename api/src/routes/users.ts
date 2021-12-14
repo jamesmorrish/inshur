@@ -10,8 +10,6 @@ interface Pagination {
 }
 
 users.get('/', (request: Request, response: Response) => {
-
-  // TODO: Sort this out - should be numeric but strings here...
   const { page = 1, limit = 20 } = request.query as unknown as Pagination;
 
   const users = userStore.allUsers();
@@ -21,7 +19,7 @@ users.get('/', (request: Request, response: Response) => {
     page: page,
     limit: limit,
     totalUsers: users.length,
-    totalPages: Math.ceil(users.length / limit),
+    pageCount: Math.ceil(users.length / limit),
   });
 });
 
