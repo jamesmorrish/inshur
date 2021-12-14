@@ -1,0 +1,29 @@
+.profilePic {
+  border-radius: 50%;
+  display: block;
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+}
+
+.box {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+dl {
+  margin-left: 20px;
+  flex-grow: 1;
+  margin-block-start: 0;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-bottom: 20px;
+  margin-inline-start: 0;
+}
